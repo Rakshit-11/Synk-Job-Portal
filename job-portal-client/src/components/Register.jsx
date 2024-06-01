@@ -23,7 +23,7 @@ const Register = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { name, email, password });
+      const response = await axios.post('https://synk-job-portal-server.vercel.app/api/register', { name, email, password });
       console.log(response);
       navigate('/login');
     } catch (err) {
