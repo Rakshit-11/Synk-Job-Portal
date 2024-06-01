@@ -18,7 +18,7 @@ const Home = () => {
     const fetchJobs = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/all-jobs");
+        const response = await fetch("https://synk-job-portal-server.vercel.app/all-jobs");
         const data = await response.json();
         setJobs(data);
       } catch (error) {
