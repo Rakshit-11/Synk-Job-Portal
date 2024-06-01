@@ -16,7 +16,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/myJobs/${currentUser.email}`, { withCredentials: true });
+        const response = await axios.get(`https://synk-job-portal-server.vercel.app/myJobs/${currentUser.email}`, { withCredentials: true });
         setJobs(response.data);
         setFilteredJobs(response.data);
       } catch (error) {
