@@ -12,7 +12,7 @@ const Applicants = () => {
     const fetchApplicants = async () => {
       try {
         if (id) {
-          const response = await axios.get(`http://localhost:5000/api/applicants/${id}`, { withCredentials: true });
+          const response = await axios.get(`https://synk-job-portal-server.vercel.app/api/applicants/${id}`, { withCredentials: true });
           console.log('Fetched applicants:', response.data); // Debug log
           setApplicants(response.data);
         }
