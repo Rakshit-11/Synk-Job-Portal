@@ -12,6 +12,8 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "crypto": "^1.0.1",
     "firebase": "^10.11.1",
     "gridfs": "^1.0.0",
