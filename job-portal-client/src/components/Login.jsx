@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/login',
+        'https://synk-job-portal-server.vercel.app/api/login',
         { email, password },
         { withCredentials: true }  // Ensure cookies are sent with the request
       );
