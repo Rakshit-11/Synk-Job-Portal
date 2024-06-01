@@ -21,7 +21,7 @@ const port = process.env.PORT || 5000;
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(cors({
-   origin: 'https://synk-job-portal.vercel.app/',
+   origin: 'https://synk-job-portal.vercel.app',
    methods: ['POST', 'GET'],
   credentials: true }));
 
