@@ -13,7 +13,7 @@ const JobDetail = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/all-jobs/${id}`);
+        const response = await axios.get(`https://synk-job-portal-server.vercel.app/all-jobs/${id}`);
         console.log(response.data)
         setJob(response.data);
         setLoading(false);
@@ -29,7 +29,7 @@ const JobDetail = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/userdetails', { withCredentials: true });
+        const response = await axios.get('https://synk-job-portal-server.vercel.app/api/userdetails', { withCredentials: true });
         setUserDetails(response.data);
       } catch (error) {
         console.error('Error fetching user details:', error);
@@ -44,7 +44,7 @@ const JobDetail = () => {
     const checkIfApplied = async () => {
       try {
         if (userDetails) {
-          const response = await axios.get(`http://localhost:5000/api/applicants/${id}`, { withCredentials: true });
+          const response = await axios.get(`https://synk-job-portal-server.vercel.app/api/applicants/${id}`, { withCredentials: true });
           const applicants = response.data;
           const userHasApplied = applicants.some(applicant => applicant.userId === userDetails.userId);
           setHasApplied(userHasApplied);
@@ -63,7 +63,7 @@ const JobDetail = () => {
       if (hasApplied) {
         alert('You have already applied for this job.');
       } else {
-        await axios.post('http://localhost:5000/api/apply-job', { 
+        await axios.post('https://synk-job-portal-server.vercel.app/api/apply-job', { 
           jobId: id,
           userId: userDetails.userId,
           personalInfo: userDetails.personalInfo,
