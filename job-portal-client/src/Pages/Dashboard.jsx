@@ -26,7 +26,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch user details from the backend when the component mounts
-    axios.get('http://localhost:5000/api/userdetails', { withCredentials: true })
+    axios.get('https://synk-job-portal-server.vercel.app/api/userdetails', { withCredentials: true })
       .then(response => {
         const { personalInfo, professionalInfo, optionalInfo } = response.data;
         setPersonalInfo(personalInfo || {
@@ -49,7 +49,7 @@ const Dashboard = () => {
       });
 
     // Fetch the resume URL
-    axios.get('http://localhost:5000/api/userdetails/resume', { withCredentials: true })
+    axios.get('https://synk-job-portal-server.vercel.app/userdetails/resume', { withCredentials: true })
       .then(response => {
         setOptionalInfo(prevState => ({
           ...prevState,
@@ -95,7 +95,7 @@ const Dashboard = () => {
     formData.append('professionalInfo', JSON.stringify(professionalInfo));
     formData.append('resume', optionalInfo.resume);
 
-    axios.post('http://localhost:5000/api/userdetails', formData, {
+    axios.post('https://synk-job-portal-server.vercel.app/api/userdetails', formData, {
       withCredentials: true,
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -106,7 +106,7 @@ const Dashboard = () => {
       if (response.data.acknowledged) {
         alert('Details saved successfully');
         // Optionally refetch user details after successful submission
-        axios.get('http://localhost:5000/api/userdetails', { withCredentials: true })
+        axios.get('https://synk-job-portal-server.vercel.app/api/userdetails', { withCredentials: true })
           .then(response => {
             const { personalInfo, professionalInfo, optionalInfo } = response.data;
             setPersonalInfo(personalInfo || {
@@ -129,7 +129,7 @@ const Dashboard = () => {
           });
 
         // Fetch the updated resume URL
-        axios.get('http://localhost:5000/api/userdetails/resume', { withCredentials: true })
+        axios.get('https://synk-job-portal-server.vercel.app/api/userdetails/resume', { withCredentials: true })
           .then(response => {
             setOptionalInfo(prevState => ({
               ...prevState,
