@@ -14,7 +14,7 @@ const CreateJob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    axios.post("http://localhost:5000/post-job", data, {
+    axios.post("https://synk-job-portal-server.vercel.app/post-job", data, {
       headers: { "Content-Type": "application/json" },
       withCredentials: true, // Ensure cookies are sent with the request
     })
