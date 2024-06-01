@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const checkUser = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/current-user', { withCredentials: true });
+        const response = await axios.get('https://synk-job-portal.vercel.app/api/auth/current-user', { withCredentials: true });
         setCurrentUser(response.data);
       } catch (error) {
         console.error('Failed to fetch current user:', error);
