@@ -11,7 +11,7 @@ const Updatejob = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/all-jobs/${id}`, { withCredentials: true })
+    axios.get(`https://synk-job-portal-server.vercel.app/all-jobs/${id}`, { withCredentials: true })
       .then(res => res.data)
       .then(data => {
         setJobData(data);
@@ -24,7 +24,7 @@ const Updatejob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    axios.patch(`http://localhost:5000/edit-job/${id}`, data, { withCredentials: true })
+    axios.patch(`https://synk-job-portal-server.vercel.app/edit-job/${id}`, data, { withCredentials: true })
       .then(res => res.data)
       .then((result) => {
         console.log(result);
