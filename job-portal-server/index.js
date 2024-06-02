@@ -28,7 +28,7 @@ app.use(cors({
 app.use(cookieParser());
 
 // MongoDB connection URI
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@synk-job.ezfbqmi.mongodb.net/synk_database?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://rakshitshetty59:${process.env.DB_PASS}@synk-job.ezfbqmi.mongodb.net/synk_database?retryWrites=true&w=majority`;
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
