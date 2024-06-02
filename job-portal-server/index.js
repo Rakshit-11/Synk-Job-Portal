@@ -31,7 +31,7 @@ app.use(cookieParser());
 const uri = `mongodb+srv://rakshitshetty59:fi2HIBGU1hJKUPqa@synk-job.ezfbqmi.mongodb.net/synk_database?retryWrites=true&w=majority`;
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true,  serverSelectionTimeoutMS: 30000, socketTimeoutMS: 45000, connectTimeoutMS: 30000  })
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => {
     console.log("Failed to connect to MongoDB", err);
