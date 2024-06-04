@@ -8,7 +8,7 @@ Synk Job Portal is a full-stack web application built with the MERN (MongoDB, Ex
 - **Job Listings**: Users can post job listings, including details such as job title, company name, salary, location, and required skills.
 - **Job Applications**: Users can apply for jobs by submitting their resume and application details.
 - **User Profiles**: Users can view and manage their job applications and update their profile details.
-- **Applicants :- Recruiter can view all the applicants that have applied for the job role
+- **Applicants** :- Recruiter can view all the applicants that have applied for the job role
 
 
 ## Technologies Used
