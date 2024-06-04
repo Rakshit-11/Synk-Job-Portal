@@ -174,13 +174,14 @@ app.post("/post-job", authenticateJWT, async (req, res) => {
 
 app.get("/all-jobs", async (req, res) => {
   try {
-    const jobs = await Job.find({}).sort({ postingDate: -1 }).exec(); // Mongoose handles sorting and querying
+    const jobs = await mongoose.connection.collection('synkJobs').find({}).toArray();
     res.send(jobs);
   } catch (err) {
     console.error("Error in /all-jobs:", err);
     res.status(500).json({ error: 'Failed to fetch jobs', details: err });
   }
 });
+
 
 
 
