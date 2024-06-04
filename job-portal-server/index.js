@@ -21,14 +21,14 @@ const port = process.env.PORT || 5000;
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(cors({
-   origin: 'https://synk-job-portal.vercel.app',
+   origin: 'http:localhost:5173',
    methods: ['POST', 'GET'],
   credentials: true }));
 
 app.use(cookieParser());
 
 // MongoDB connection URI
-const uri = `mongodb+srv://rakshitshetty59:fi2HIBGU1hJKUPqa@synk-job.ezfbqmi.mongodb.net/synk_database?retryWrites=true&w=majority`;
+const uri = `MONGO DB DATABASE URI`;
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true,  serverSelectionTimeoutMS: 30000, socketTimeoutMS: 45000, connectTimeoutMS: 30000  })
